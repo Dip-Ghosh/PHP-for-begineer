@@ -1,5 +1,6 @@
 <?php
 
-require "index.view.php";
+$name = 'Home';
+require "views/index.view.php";
 
 

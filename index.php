@@ -3,18 +3,17 @@
 declare(strict_types=1);
 
 require("functions.php");
+require("Database.php");
 //require("router.php");
 
 
-// connect to mysql database.
+// connect to mysql database, and execute database a query.
 
-$dsn       = "mysql:host=192.168.56.56; port=3306;dbname=PHP-For-Beginners;charset=utf8mb4";
-$pdo       = new PDO($dsn, 'homestead', 'secret');
-$statement = $pdo->prepare("Select * from posts");
-$statement->execute();
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+$db    = new Database();
+$posts = $db->query("Select * from posts")->fetchAll(PDO::FETCH_ASSOC);;
 
 
 foreach ($posts as $post) {
-    echo $post["title"] . "<br>";
+    echo $post["title"]."<br>";
 }

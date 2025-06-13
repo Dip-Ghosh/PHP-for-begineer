@@ -18,5 +18,3 @@ $posts = $statement->fetchAll(PDO::FETCH_ASSOC);
 foreach ($posts as $post) {
     echo $post["title"] . "<br>";
 }
-# IntelliJ project files
-.idea/

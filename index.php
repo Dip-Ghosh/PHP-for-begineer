@@ -10,8 +10,10 @@ require("Database.php");
 
 $config = require("config.php");
 $db     = new Database($config['database'], $config['database']['username'], $config['database']['password']);
-$posts  = $db->query("Select * from posts")->fetchAll(PDO::FETCH_ASSOC);;
 
+$id    = $_GET['id'];
+$query = "Select * from posts where id = :id";
+$posts = $db->query($query, ['id' => $id])->fetchAll(PDO::FETCH_ASSOC);;
 
 foreach ($posts as $post) {
     echo $post["title"]."<br>";

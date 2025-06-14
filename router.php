@@ -6,9 +6,12 @@ $routes = [
     '/'        => 'controllers/index.php',
     '/contact' => 'controllers/contact.php',
     '/about'   => 'controllers/about.php',
+    '/notes'   => 'controllers/notes.php',
+    '/note'    => 'controllers/note.php',
 ];
 
-function routeToController($uri, $routes) {
+function routeToController($uri, $routes)
+{
     if (array_key_exists($uri, $routes)) {
         require $routes[$uri];
     } else {

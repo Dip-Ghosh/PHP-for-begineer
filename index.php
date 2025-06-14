@@ -5,7 +5,7 @@ declare(strict_types=1);
 require("functions.php");
 require("Database.php");
 
-//require("router.php");
+require("router.php");
 
 
 $config = require("config.php");
